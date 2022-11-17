@@ -4,20 +4,20 @@ import java.util.ArrayList;
 
 public class Words {
 
-    ArrayList<String> words = new ArrayList<>();
-
-    public Words (){
-        this.words.add("approach");
-        this.words.add("sequence");
-        this.words.add("tropical");
-        this.words.add("epicalyx");
-        this.words.add("fraction");
-        this.words.add("portrait");
-        this.words.add("finished");
-        this.words.add("antidisestablishmentarianism");
+    static ArrayList<String> words = new ArrayList<>();
+    static {
+        words.add("approach");
+        words.add("sequence");
+        words.add("tropical");
+        words.add("epicalyx");
+        words.add("fraction");
+        words.add("portrait");
+        words.add("finished");
+        words.add("antidisestablishmentarianism");
     }
 
-    public ArrayList<String> getWords() {
+
+    public static ArrayList<String> getWords() {
         return words;
     }
 
