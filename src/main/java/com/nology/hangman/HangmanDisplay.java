@@ -25,21 +25,6 @@ public class HangmanDisplay {
         }
     }
 
-    public void setHangmanImage(ArrayList<String> hangmanImage) {
-        this.hangmanImage = hangmanImage;
-    }
-
-    public ArrayList<String> getHangmanImage() {
-        return hangmanImage;
-    }
-
-    public int getHangStage() {
-        return hangStage;
-    }
-
-    public void setHangStage(int hangStage) {
-        this.hangStage = hangStage;
-    }
 
     public void printHangmanImage(){
         for(String hangLine: hangmanImage){
@@ -52,6 +37,7 @@ public class HangmanDisplay {
         for(Character letterDisplay: wngLettersDisplay){
             System.out.print(" "+ letterDisplay + " ");
         }
+        System.out.print("\n");
     }
 
     public void updateCrrLettersDisplay(int index, Character letter){
@@ -96,8 +82,5 @@ public class HangmanDisplay {
                 hangStage++;
                 break;
         }
-
-
-
     }
 }

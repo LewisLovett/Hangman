@@ -18,17 +18,19 @@ public class WordChecker {
         this.guessLimit = guessLimit;
     }
 
+    public void incrementGuess(){
+        numOfGuesses++;
+    }
+
     public ArrayList<Integer> containsLetter(Character letter, String randWord){
         ArrayList<Integer> letterPos = new ArrayList<>();
         for(int i = 0; i<randWord.length();i++){
             if(randWord.charAt(i)==letter){
                 letterPos.add(i);
                 lettersCorrect++;
-                if(!charsGuessed.contains(letter)){
-                    charsGuessed.add(letter);
-                }
             }
         }
+        charsGuessed.add(letter);
         return letterPos;
     }
 
@@ -36,10 +38,10 @@ public class WordChecker {
         Boolean isGameOver = false;
         if(lettersCorrect==numOfLetters){
             isGameOver = true;
-            System.out.println("You win");
+            System.out.println("-----------YOU WIN-----------");
         }else if(numOfGuesses==guessLimit){
             isGameOver = true;
-            System.out.println("You lose");
+            System.out.println("-----------YOU LOSE-----------");
         }
         return isGameOver;
     }
@@ -47,9 +49,17 @@ public class WordChecker {
     public Character getInput(){
         String userInput;
         Character response = 0;
-        userInput = scanObj.nextLine();
-        if(userInput.length()==1 && userInput.matches ("[a-zA-Z]")){
-            response = userInput.toLowerCase().charAt(0);
+        Boolean isValidInput = false;
+        while (!isValidInput) {
+            System.out.println("Please enter a single letter");
+            userInput = scanObj.nextLine();
+
+            if (userInput.length() == 1 && userInput.matches("[a-zA-Z]")) {
+                response = userInput.toLowerCase().charAt(0);
+                isValidInput = true;
+            }else{
+                System.out.println("That is an incorrect input");
+            }
         }
         return response;
     }
@@ -61,4 +71,5 @@ public class WordChecker {
         }
         return response;
     }
+
 }
