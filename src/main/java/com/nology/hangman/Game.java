@@ -2,12 +2,12 @@ package com.nology.hangman;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Scanner;
 
-public class game {
+public class Game {
     static Random rand = new Random();
 
-    public static void main(String[] args) {
+
+    public void runGame(){
         int randWordIndex = rand.nextInt(Words.getWords().size());
         String randWord = Words.getWords().get(randWordIndex);
         HangmanDisplay hangmanDisplay = new HangmanDisplay(randWord);
