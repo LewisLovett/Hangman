@@ -21,7 +21,9 @@ public class Words {
         return words;
     }
 
+
     public void setWords(ArrayList<String> words) {
         this.words = words;
     }
+
 }

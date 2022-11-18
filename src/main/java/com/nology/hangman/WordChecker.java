@@ -1,12 +1,16 @@
 package com.nology.hangman;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class WordChecker {
     int numOfLetters;
     int lettersCorrect;
     int numOfGuesses;
     int guessLimit;
+//    ArrayList<Character> lettersUsed = new ArrayList<>();
+    ArrayList<Character> charsGuessed = new ArrayList<>();
+    Scanner scanObj = new Scanner(System.in);
     public WordChecker(String randWord, int guessLimit){
         this.numOfLetters = randWord.length();
         this.lettersCorrect = 0;
@@ -20,6 +24,9 @@ public class WordChecker {
             if(randWord.charAt(i)==letter){
                 letterPos.add(i);
                 lettersCorrect++;
+                if(!charsGuessed.contains(letter)){
+                    charsGuessed.add(letter);
+                }
             }
         }
         return letterPos;
@@ -37,7 +44,21 @@ public class WordChecker {
         return isGameOver;
     }
 
-    public void getInput(){
+    public Character getInput(){
+        String userInput;
+        Character response = 0;
+        userInput = scanObj.nextLine();
+        if(userInput.length()==1 && userInput.matches ("[a-zA-Z]")){
+            response = userInput.toLowerCase().charAt(0);
+        }
+        return response;
+    }
 
+    public Boolean usedLetterCheck(Character userInput){
+        Boolean response = false;
+        if(charsGuessed.contains(userInput)){
+            response = true;
+        }
+        return response;
     }
 }

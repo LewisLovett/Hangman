@@ -9,15 +9,6 @@ public class HangmanDisplay {
     ArrayList<Character> wngLettersDisplay = new ArrayList<>();
     int hangStage;
 
-
-//            hangmanImage.add("      _______");
-//        hangmanImage.add("     |/      |");
-//        hangmanImage.add("     |      (_)");
-//        hangmanImage.add("     |      \\|/");
-//        hangmanImage.add("     |       |");
-//        hangmanImage.add("     |      / \\");
-//        hangmanImage.add("     |");
-//        hangmanImage.add("  ___|___");
     public HangmanDisplay(String desiredWord){
         this.hangmanImage.add("");
         this.hangmanImage.add("");
@@ -73,12 +64,40 @@ public class HangmanDisplay {
 
 
     public void nextStage(){
-        if(hangStage == 0){
-            hangmanImage.set(5,"     |");
-            hangmanImage.set(6,"     |");
-            hangmanImage.set(7,"  ___|___");
-            hangStage++;
+        switch (hangStage){
+            case 0:
+                hangmanImage.set(5,"     |");
+                hangmanImage.set(6,"     |");
+                hangmanImage.set(7,"  ___|___");
+                hangStage++;
+                break;
+            case 1:
+                hangmanImage.set(0,"      _______");
+                hangmanImage.set(1,"     |/      |");
+                hangmanImage.set(2,"     |");
+                hangmanImage.set(3,"     |");
+                hangmanImage.set(4,"     |");
+                hangStage++;
+                 break;
+            case 2:
+                hangmanImage.set(2,"     |      (_)");
+                hangStage++;
+                break;
+            case 3:
+                hangmanImage.set(3,"     |      \\|/");
+                hangStage++;
+                break;
+            case 4:
+                hangmanImage.set(4,"     |       |");
+                hangStage++;
+                break;
+            case 5:
+                hangmanImage.set(5,"     |      / \\");
+                hangStage++;
+                break;
         }
+
+
 
     }
 }
