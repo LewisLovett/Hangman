@@ -1,5 +1,5 @@
 # Hangman
-When the main method is run the user is shown in the console a number of dashes to indicate the length of the word they will need to guess. The user is prompted to enter a single letter. If the word contains that letter the positions of the letter are shown in the dashes. If the word does not contain the letter, then the player loses a life. The game end when the user loses 6 lives or they have guessed the all the correct letters. If the user enters a letter they have already entered or a character that is not a letter then they are notified with an error message and they do not lose a life. 
+This is my Hangman project. When the main method is run the user is shown in the console a number of dashes to indicate the length of the word they will need to guess. The user is prompted to enter a single letter. If the word contains that letter the positions of the letter are shown in the dashes. If the word does not contain the letter, then the player loses a life. The game end when the user loses 6 lives or they have guessed the all the correct letters. If the user enters a letter they have already entered or a character that is not a letter then they are notified with an error message and they do not lose a life. 
 
 ## Buit Using
 - Java
